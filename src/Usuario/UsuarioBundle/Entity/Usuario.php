@@ -79,7 +79,24 @@ class Usuario
      */
     private $idiomas;
 
-
+    /**
+     * @ORM\ManyToMany(targetEntity="Idioma")
+     * @ORM\JoinTable(name="usuarios_idiomas_interes",
+     *      joinColumns={@ORM\JoinColumn(name="usuario_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="idioma_id", referencedColumnName="id")}
+     *      )
+     */
+    private $idiomasInteres;
+    
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->idiomas = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->idiomasInteres = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
     /**
      * Get id
      *
@@ -252,14 +269,6 @@ class Usuario
     }
 
     /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->idiomas = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    
-    /**
      * Add idiomas
      *
      * @param \Usuario\UsuarioBundle\Entity\Idioma $idiomas
@@ -290,5 +299,38 @@ class Usuario
     public function getIdiomas()
     {
         return $this->idiomas;
+    }
+
+    /**
+     * Add idiomasInteres
+     *
+     * @param \Usuario\UsuarioBundle\Entity\Idioma $idiomasInteres
+     * @return Usuario
+     */
+    public function addIdiomasIntere(\Usuario\UsuarioBundle\Entity\Idioma $idiomasInteres)
+    {
+        $this->idiomasInteres[] = $idiomasInteres;
+    
+        return $this;
+    }
+
+    /**
+     * Remove idiomasInteres
+     *
+     * @param \Usuario\UsuarioBundle\Entity\Idioma $idiomasInteres
+     */
+    public function removeIdiomasIntere(\Usuario\UsuarioBundle\Entity\Idioma $idiomasInteres)
+    {
+        $this->idiomasInteres->removeElement($idiomasInteres);
+    }
+
+    /**
+     * Get idiomasInteres
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIdiomasInteres()
+    {
+        return $this->idiomasInteres;
     }
 }
