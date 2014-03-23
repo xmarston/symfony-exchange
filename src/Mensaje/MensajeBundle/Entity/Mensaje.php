@@ -29,17 +29,18 @@ class Mensaje
     private $mensaje;
 
     /**
-     * @ORM\OneToOne(targetEntity="\Usuario\UsuarioBundle\Entity\Usuario")
-     * @ORM\JoinColumn(name="usuario_id", referencedColumnName="id")
+     * @var integer
+     *
+     * @ORM\Column(name="emisor", type="integer")
      */
     private $emisor;
 
     /**
-     * @ORM\OneToOne(targetEntity="\Usuario\UsuarioBundle\Entity\Usuario")
-     * @ORM\JoinColumn(name="usuario_id", referencedColumnName="id")
+     * @var integer
+     *
+     * @ORM\Column(name="receptor", type="integer")
      */
     private $receptor;
-
 
     /**
      * Get id
@@ -77,10 +78,10 @@ class Mensaje
     /**
      * Set emisor
      *
-     * @param \Usuario\UsuarioBundle\Entity\Usuario $emisor
+     * @param integer $emisor
      * @return Mensaje
      */
-    public function setEmisor(\Usuario\UsuarioBundle\Entity\Usuario $emisor = null)
+    public function setEmisor($emisor)
     {
         $this->emisor = $emisor;
     
@@ -90,7 +91,7 @@ class Mensaje
     /**
      * Get emisor
      *
-     * @return \Usuario\UsuarioBundle\Entity\Usuario 
+     * @return integer 
      */
     public function getEmisor()
     {
@@ -100,10 +101,10 @@ class Mensaje
     /**
      * Set receptor
      *
-     * @param \Usuario\UsuarioBundle\Entity\Usuario $receptor
+     * @param integer $receptor
      * @return Mensaje
      */
-    public function setReceptor(\Usuario\UsuarioBundle\Entity\Usuario $receptor = null)
+    public function setReceptor($receptor)
     {
         $this->receptor = $receptor;
     
@@ -113,7 +114,7 @@ class Mensaje
     /**
      * Get receptor
      *
-     * @return \Usuario\UsuarioBundle\Entity\Usuario 
+     * @return integer 
      */
     public function getReceptor()
     {
