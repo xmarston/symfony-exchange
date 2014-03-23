@@ -70,6 +70,15 @@ class Usuario
      */
     private $salt;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Idioma")
+     * @ORM\JoinTable(name="usuarios_idiomas",
+     *      joinColumns={@ORM\JoinColumn(name="usuario_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="idioma_id", referencedColumnName="id")}
+     *      )
+     */
+    private $idiomas;
+
 
     /**
      * Get id
@@ -240,5 +249,46 @@ class Usuario
     public function getSalt()
     {
         return $this->salt;
+    }
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->idiomas = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Add idiomas
+     *
+     * @param \Usuario\UsuarioBundle\Entity\Idioma $idiomas
+     * @return Usuario
+     */
+    public function addIdioma(\Usuario\UsuarioBundle\Entity\Idioma $idiomas)
+    {
+        $this->idiomas[] = $idiomas;
+    
+        return $this;
+    }
+
+    /**
+     * Remove idiomas
+     *
+     * @param \Usuario\UsuarioBundle\Entity\Idioma $idiomas
+     */
+    public function removeIdioma(\Usuario\UsuarioBundle\Entity\Idioma $idiomas)
+    {
+        $this->idiomas->removeElement($idiomas);
+    }
+
+    /**
+     * Get idiomas
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIdiomas()
+    {
+        return $this->idiomas;
     }
 }
