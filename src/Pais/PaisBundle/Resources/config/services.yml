@@ -1,0 +1,7 @@
+parameters:
+#    pais.example.class: Pais\PaisBundle\Example
+
+services:
+#    pais.example:
+#        class: %pais.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
