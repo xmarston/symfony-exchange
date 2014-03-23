@@ -87,7 +87,7 @@ class Usuario
      *      )
      */
     private $idiomasInteres;
-    
+
     /**
      * Constructor
      */
