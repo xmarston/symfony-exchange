@@ -8,5 +8,5 @@ pais:
 
 usuario:
     resource: "@UsuarioBundle/Resources/config/routing.yml"
-    prefix:   /usuario/
+    prefix:   /
 
