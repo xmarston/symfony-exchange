@@ -1,0 +1,7 @@
+parameters:
+#    general_content.example.class: General\GeneralContentBundle\Example
+
+services:
+#    general_content.example:
+#        class: %general_content.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
