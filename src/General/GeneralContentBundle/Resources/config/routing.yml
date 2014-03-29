@@ -1,0 +1,3 @@
+general_content_homepage:
+    pattern:  /
+    defaults: { _controller: GeneralContentBundle:Default:index }

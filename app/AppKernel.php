@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Usuario\UsuarioBundle\UsuarioBundle(),
             new Pais\PaisBundle\PaisBundle(),
             new Mensaje\MensajeBundle\MensajeBundle(),
+            new General\GeneralContentBundle\GeneralContentBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
