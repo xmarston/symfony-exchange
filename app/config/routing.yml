@@ -4,11 +4,11 @@ general_content:
 
 mensaje:
     resource: "@MensajeBundle/Resources/config/routing.yml"
-    prefix:   /mensaje/
+    prefix:   /mensajes/
 
 pais:
     resource: "@PaisBundle/Resources/config/routing.yml"
-    prefix:   /pais/
+    prefix:   /
 
 usuario:
     resource: "@UsuarioBundle/Resources/config/routing.yml"
