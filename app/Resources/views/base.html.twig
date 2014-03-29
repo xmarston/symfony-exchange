@@ -2,12 +2,34 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <meta name="author" content="Ricardo, Carlos, Daniel">
+        <title>{% block title %}Bienvenido!{% endblock %}</title>
+        <meta name="description" content="{% block description %}Bienvenido!{% endblock %}">
+        <meta name="keywords" content="{% block keywords %}Bienvenido!{% endblock %}">
+
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link href="{{ asset('css/estilos.css') }}" rel="stylesheet" type="text/css" />
+        {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div id="contGeneral">
+            <header>
+                {% block header %}ZONA DEL HEADER{% endblock %}
+            </header>
+
+            <nav>
+                {% block nav %}ZONA PARA EL MENÚ{% endblock %}
+            </nav>
+
+            <div id="contPagina">
+                {% block body %}ZONA DEL CONTENIDO DE LA PAGINA{% endblock %}
+            </div>
+
+            <footer>
+                {% block footer %}ZONA DEL FOOTER{% endblock %}
+            </footer>
+
+            {% block javascripts %}{% endblock %}
+        </div><!-- contGeneral -->
     </body>
 </html>
