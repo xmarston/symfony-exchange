@@ -2,3 +2,31 @@
     margin: 0;
     padding: 0;
 }
+.clearBoth{
+    clear: both;
+}
+#contGeneral{
+
+}
+.elAncho{
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 10px;
+}
+header{
+    background: #A1B957;
+    padding: 10px 0;
+}
+header .logo{
+    text-align: center;
+}
+header .botones{
+    text-align: right;
+}
+footer{
+    background: #A1B957;
+    padding: 5px 0;
+}
+#contPagina{
+    margin-bottom: 20px;
+}

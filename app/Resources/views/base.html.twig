@@ -9,24 +9,98 @@
 
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link href="{{ asset('css/estilos.css') }}" rel="stylesheet" type="text/css" />
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.min.css') }}">
+
+        <script src="{{ asset('js/jquery-1.11.1.min.js') }}"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
         <div id="contGeneral">
             <header>
-                {% block header %}ZONA DEL HEADER{% endblock %}
+                {% block header %}
+                    <div class="elAncho">
+                        <div class="col-md-4">
+                            Intercambio de idiomas
+                        </div>
+
+                        <div class="col-md-4 logo">
+                            Logo
+                        </div>
+
+                        <div class="col-md-4 botones">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default">Entrar</button>
+                                <button type="button" class="btn btn-default">Registrar</button>
+                            </div>
+                        </div>
+
+                        <div class="clearBoth"></div>
+                    </div>
+                {% endblock %}
             </header>
 
             <nav>
-                {% block nav %}ZONA PARA EL MENÚ{% endblock %}
+                {% block nav %}
+                    <nav class="navbar navbar-default" role="navigation">
+                        <div class="elAncho">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <a class="navbar-brand" href="#">Opc 0</a>
+                            </div>
+
+                            <div class="container-fluid">
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav">
+                                        <li class="active">
+                                            <a href="#">Opc 1</a>
+                                        </li>
+
+                                        <li>
+                                            <a href="#">Opc 2</a>
+                                        </li>
+
+                                        <li class="dropdown">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                                Opc 3 <span class="caret"></span>
+                                            </a>
+
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Sub opc 3.1</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Sub opc 3.2</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div><!-- /.navbar-collapse -->
+                            </div><!-- /.container-fluid -->
+                        </div>
+                    </nav>
+                {% endblock %}
             </nav>
 
-            <div id="contPagina">
-                {% block body %}ZONA DEL CONTENIDO DE LA PAGINA{% endblock %}
+            <div id="contPagina" class="elAncho">
+                {% block body %}
+                    Si lo que estas buscando es una pareja para practicar idiomas...
+                {% endblock %}
             </div>
 
             <footer>
-                {% block footer %}ZONA DEL FOOTER{% endblock %}
+                {% block footer %}
+                    <div class="elAncho">
+                        &copy; {{ "now"|date("Y") }}
+                    </div>
+                {% endblock %}
             </footer>
 
             {% block javascripts %}{% endblock %}
